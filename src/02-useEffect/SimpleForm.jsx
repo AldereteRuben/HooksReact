@@ -13,7 +13,15 @@ const SimpleForm = () => {
 
   useEffect(() => {
     console.log("useEffect called!!");
-  });
+  }, []);
+
+  useEffect(() => {
+    console.log("form changed!!");
+  }, [formState]);
+
+  useEffect(() => {
+    console.log("email changed!!");
+  }, [email]);
 
   return (
     <>
