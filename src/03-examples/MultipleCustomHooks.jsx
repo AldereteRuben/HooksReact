@@ -1,12 +1,15 @@
 import React from "react";
 import useFetch from "./../hooks/useFetch";
+import useCounter from "./../hooks/useCounter";
+import LoadingQuote from "./LoadingQuote";
+import Quote from "./Quote";
 
 const MultipleCustomHooks = () => {
+  const { counter, increment } = useCounter(1);
   const { data, isLoading, hasError } = useFetch(
-    "https://api.breakingbadquotes.xyz/v1/quotes/1"
+    `https://api.breakingbadquotes.xyz/v1/quotes/${counter}`
   );
   const { author, quote } = !!data && data[0];
-
   return (
     <>
       <div className="container">
@@ -16,14 +19,18 @@ const MultipleCustomHooks = () => {
             <hr />
           </div>
           {isLoading ? (
-            <div className="alert alert-info text-center">Loading...</div>
+            <LoadingQuote />
           ) : (
-            <blockquote className="blockquote text-end">
-              <p className="mb-1">{quote}</p>
-              <footer className="blockquote-footer mt-2">{author}</footer>
-            </blockquote>
+            <Quote author={author} quote={quote} />
           )}
         </div>
+        <button
+          onClick={() => increment(1)}
+          className="btn btn-primary"
+          hidden={isLoading}
+        >
+          New quote
+        </button>
       </div>
     </>
   );
