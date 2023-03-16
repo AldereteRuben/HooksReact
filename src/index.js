@@ -4,10 +4,11 @@ import "./index.css";
 // import HooksApp from "./HooksApp";
 import FormWithSimpleCustomHook from "./02-useEffect/FormWithSimpleCustomHook";
 import MultipleCustomHooks from "./03-examples/MultipleCustomHooks";
+import FocusScreen from "./04-useRefe/FocusScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //  <React.StrictMode>
-  <MultipleCustomHooks></MultipleCustomHooks>
+  <FocusScreen></FocusScreen>
   // </React.StrictMode>
 );
