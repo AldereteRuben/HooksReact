@@ -9,10 +9,11 @@ import Layout from "./05-useLayoutEffect/Layout";
 import Memorize from "./06-memos/Memorize";
 import { CallbackHook } from "./06-memos/CallbackHook";
 import { Padre } from "./07-tarea-memo/Padre";
+import "./08-useReducer/intro-reducer";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  //  <React.StrictMode>
-  <Padre />
-  // </React.StrictMode>
-);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   //  <React.StrictMode>
+//   <Padre />
+//   // </React.StrictMode>
+// );
